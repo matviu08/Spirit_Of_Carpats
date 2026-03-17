@@ -1,54 +1,89 @@
-// ====== СВІТЛЯЧКИ ======
-const particlesContainer = document.getElementById('particles');
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // ====== МАГІЧНІ СВІТЛЯЧКИ ТА ЛИСТЯ ======
+    const particlesContainer = document.getElementById('particles');
+    const leavesContainer = document.getElementById('leaves');
 
-function createParticle() {
-    const p = document.createElement('div');
-    p.classList.add('particle');
+    function createParticle() {
+        if (!particlesContainer) return;
+        const p = document.createElement('div');
+        p.classList.add('particle');
 
-    const size = Math.random() * 8 + 4; // збільшуємо мінімум до 4, максимум до 12
-    p.style.width = size + 'px';
-    p.style.height = size + 'px';
+        const size = Math.random() * 8 + 4;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = Math.random() * window.innerWidth + 'px';
+        p.style.top = window.innerHeight + 'px';
+        
+        const duration = (4 + Math.random() * 4) * 1000;
+        const offsetX = Math.random() * 150 - 75;
 
-    p.style.left = Math.random() * window.innerWidth + 'px';
-    p.style.top = window.innerHeight + 'px';
+        p.animate([
+            { transform: 'translateY(0) translateX(0) scale(1)', opacity: 1 },
+            { transform: `translateY(-${window.innerHeight + 100}px) translateX(${offsetX}px) scale(0)`, opacity: 0 }
+        ], { duration: duration, iterations: 1, easing: 'ease-out' });
 
-    p.style.background = 'radial-gradient(circle, #8affc1, #6fcf97)';
-    p.style.boxShadow = '0 0 12px #8affc1, 0 0 20px #6fcf97';
-    p.style.borderRadius = '50%';
+        particlesContainer.appendChild(p);
+        setTimeout(() => p.remove(), duration);
+    }
 
-    p.style.opacity = 1;
-    const duration = 4 + Math.random() * 4;
+    // Твій друг ставив тут 1 мілісекунду. Я поставив 300 (3 рази на секунду) - це ідеально і безпечно!
+    if (particlesContainer) setInterval(createParticle, 300);
 
-    const offsetX = Math.random() * 150 - 75;
-    const rotation = Math.random() * 360;
 
-    p.animate([
-        { transform: 'translateY(0) translateX(0) rotate(0deg)', opacity: 1 },
-        { transform: `translateY(-${window.innerHeight + 100}px) translateX(${offsetX}px) rotate(${rotation}deg)`, opacity: 0 }
-    ], { duration: duration * 1000, iterations: 1, easing: 'ease-out' });
+    // ====== МОБІЛЬНЕ МЕНЮ ======
+    const mobileMenuBtn = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
 
-    particlesContainer.appendChild(p);
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-    setTimeout(() => p.remove(), duration * 1000);
-}
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    }
 
-setInterval(createParticle, 20);
+    // ====== ЛАЙТБОКС (ГАЛЕРЕЯ) ======
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.querySelector('.close-lightbox');
 
-// ====== ЛИСТЯ / МАГІЧНІ ЧАСТИНКИ ======
-const leavesContainer = document.getElementById('leaves');
+    if (lightbox && galleryItems.length > 0) {
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgElement = item.querySelector('img');
+                const titleElement = item.querySelector('.sprite-name');
+                
+                if (imgElement && titleElement) {
+                    lightboxImg.src = imgElement.src;
+                    lightboxImg.style.display = 'block';
+                    lightboxCaption.textContent = titleElement.textContent;
+                    lightbox.classList.add('active');
+                }
+            });
+        });
 
-function createLeaf() {
-    const leaf = document.createElement('div');
-    leaf.classList.add('leaf');
-    leaf.style.left = Math.random()*window.innerWidth+'px';
-    leaf.style.top = window.innerHeight+'px';
-    leaf.style.opacity = 1;
-    const speed = 4000+Math.random()*4000;
-    leaf.animate([
-        { transform:'translateY(0px) rotate(0deg)' },
-        { transform:`translateY(-${window.innerHeight + 100}px) rotate(${Math.random()*360}deg)` }
-    ], { duration:speed, iterations:1, easing:'linear' });
-    leavesContainer.appendChild(leaf);
-    setTimeout(()=>leaf.remove(), speed);
-}
-setInterval(createLeaf,1);
+        const closeLightbox = () => lightbox.classList.remove('active');
+        
+        closeBtn.addEventListener('click', closeLightbox);
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+    }
+});
