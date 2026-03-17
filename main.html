@@ -10,6 +10,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
 <div id="particles"></div>
 
 <header>
@@ -23,6 +24,141 @@
                 <a href="#gallery">Галерея</a>
                 <a href="#updates">Хроніки</a>
             </nav>
+=======
+    <main style="padding-top: 120px;">
+        
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="text-block">
+                        <h2>Глава 1: Поклик Карпат</h2>
+                        <div class="card story-card">
+                            <p>Головний герой — колишній лісничий, який повертається до рідних лісів Карпат заради ностальгії. Знайомі стежки та залишені колись позначки для туристів викликають теплі спогади. Проте спокій руйнує дивна знахідка — неприродно хворе дерево, яке одразу привертає увагу досвідченого лісника.</p>
+                            <p>Вирушивши до своєї старої наглядової вишки, герой бере до рук вірну сокиру і раптом ловить моторошний флешбек із невідомим голосом. Проігнорувавши попередження, він зрубує хворе дерево... і пробуджує щось паранормальне.</p>
+                            <p>Звідкись прилітає газета зі статтею про зниклих безвісти людей. Найстрашніше те, що дата випуску — з майбутнього. Не встигнувши осмислити прочитане, герой отримує раптовий удар. Темрява. Так закінчується перша глава.</p>
+                        </div>
+                    </div>
+                    <div class="image-block">
+                        <img src="assets/meinMenuBac.png" alt="концепт-арт" class="responsive-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mechanics" class="section dark-section">
+            <div class="container">
+                <h2>Механіки</h2>
+                <div class="mechanics-grid">
+                    <div class="card mechanic-card">
+                        <div class="icon-placeholder">🏃</div>
+                        <h3>Вдосконалений рух</h3>
+                        <p>Повністю кастомна система переміщення гравця (BetterPlayerMovement). Плавні стрибки, чітке керування та нові анімації для максимального контролю в платформінгу.</p>
+                    </div>
+                    <div class="card mechanic-card">
+                        <div class="icon-placeholder">🌍</div>
+                        <h3>Система локацій</h3>
+                        <p>Безшовне перемикання між рівнями завдяки власному LocationService. Кожна зона має свої моделі, унікальну музику та багатошаровий дизайн (Added3Layer).</p>
+                    </div>
+                    <div class="card mechanic-card">
+                        <div class="icon-placeholder">💾</div>
+                        <h3>Збереження прогресу</h3>
+                        <p>Надійна система SaveService, яка фіксує всі досягнення. Гравці можуть налаштовувати гру під себе у детальному меню опцій, і всі дані будуть збережені.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2>Галерея спрайтів та фонів</h2>
+                <div class="gallery-grid">
+                    
+                    <div class="gallery-item">
+                        <img src="assets/standing.png" alt="Головний герой" class="gallery-img">
+                        <span class="sprite-name">Лісничий (Idle)</span>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/newspaper.png" alt="Газета з майбутнього" class="gallery-img">
+                        <span class="sprite-name">Газета з майбутнього</span>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/sickTree.png" alt="Хворе дерево" class="gallery-img">
+                        <span class="sprite-name">Хворе дерево</span>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/location.png" alt="Локація" class="gallery-img">
+                        <span class="sprite-name">Карпатський ліс</span>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/meinMenuBac.png" alt="Головне меню" class="gallery-img">
+                        <span class="sprite-name">Фон головного меню</span>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="assets/optionBac.png" alt="Налаштування" class="gallery-img">
+                        <span class="sprite-name">Фон налаштувань</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="updates" class="section">
+            <div class="container">
+                <h2>Хроніки розробки (Девлог)</h2>
+                <div class="updates-timeline">
+                    <article class="post">
+                        <div class="post-header">
+                            <h3>Фізика, Рух та Анімації</h3>
+                            <span class="tag">Оновлення Beta</span>
+                        </div>
+                        <p>Останні кілька днів ми активно працювали над ядром гри. <strong>BobrickCS22</strong> викотив нову бету фізики (Physics_Beta!), що зробило світ більш живим (додано генерацію хмар). Тим часом <strong>forking2</strong> переписав систему керування на BetterPlayerMovement. Я (matviu08) підв'язав під це нові спрайти та анімації. Тепер персонаж відчувається дуже динамічно!</p>
+                    </article>
+
+                    <article class="post">
+                        <div class="post-header">
+                            <h3>Система локацій та збережень</h3>
+                            <span class="tag">Архітектура</span>
+                        </div>
+                        <p>Велика робота "під капотом". Ми реалізували повноцінне перемикання між локаціями. <strong>BobrickCS22</strong> оновив моделі та LocationService, а <strong>forking2</strong> закінчив роботу над SaveService, щоб прогрес між цими локаціями не втрачався. Також додали підтримку трьох шарів для рівнів (Added3Layer) для створення ефекту глибини.</p>
+                    </article>
+                    
+                    <article class="post">
+                        <div class="post-header">
+                            <h3>Головне меню, опції та звук</h3>
+                            <span class="tag">UI / UX</span>
+                        </div>
+                        <p>Гра нарешті отримує своє "обличчя". Я частково завершив логіку головного меню та створив повноцінне вікно налаштувань, де тепер можна перемикати опції. Додав фонову музику та нові зображення, а <strong>BobrickCS22</strong> озвучив інтерфейс (створено hover_sound.wav для кнопок). Проєкт зібрано до купи, баги пофікшено!</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 matviu08, BobrickCS22, forking2. Всі права захищено.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">TG</a>
+                    <a href="#" class="social-icon">GH</a>
+                    <a href="#" class="social-icon">YT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Спрайт" style="display: none;">
+            <div id="lightbox-placeholder"></div>
+            <h3 id="lightbox-caption"></h3>
+>>>>>>> 6911e5b4f85565e3c754a636d8a06ac5cc3327f7
         </div>
     </div>
 </header>
