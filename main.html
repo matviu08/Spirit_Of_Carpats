@@ -84,7 +84,7 @@
                         <span class="sprite-name">Газета з майбутнього</span>
                     </div>
                     
-                    <div class="gallery-item">
+                    <div class="gallery-item" id="secret-tree">
                         <img src="assets/sickTree.png" alt="Спрайт" class="gallery-img">
                         <span class="sprite-name">Хворе дерево</span>
                     </div>
@@ -102,6 +102,97 @@
                     <div class="gallery-item">
                         <img src="assets/optionBac.png" alt="Спрайт" class="gallery-img">
                         <span class="sprite-name">Фон налаштувань</span>
+                    </div>
+
+                </div>
+                <div class="audio-section">
+                    <h3 class="sub-heading">Аудіоархів: Звуки лісу</h3>
+                    
+                    <div class="retro-player" id="retro-player">
+                        <div class="cassette-window">
+                            <div class="reel"></div>
+                            <div class="tape-bridge"></div>
+                            <div class="reel"></div>
+                        </div>
+                        
+                        <div class="player-info">
+                            <span class="track-name">meinMusic.mp3</span>
+                            <span class="track-status" id="track-status">Зупинено</span>
+                        </div>
+                        
+                        <div class="player-controls">
+                            <button id="play-btn" class="btn play-btn">▶ PLAY</button>
+                        </div>
+
+                        <audio id="bgm-audio" loop>
+                            <source src="assets/meinMusicCapter1.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="roadmap" class="section dark-section">
+            <div class="container">
+                <h2>Дорожня карта розробки</h2>
+                <div class="roadmap-content">
+
+                    <div class="card">
+                        <h3 class="roadmap-title">Етапи проєкту</h3>
+                        <ul class="timeline-list">
+                            <li class="done">
+                                <span class="status-dot"></span>
+                                <div class="phase-info">
+                                    <h4>Прототип</h4>
+                                    <p>Базовий рух, тестова локація, збереження гри.</p>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <span class="status-dot"></span>
+                                <div class="phase-info">
+                                    <h4>Альфа-версія</h4>
+                                    <p>Головне меню, базова фізика, створення першої глави та налаштування звуків.</p>
+                                </div>
+                            </li>
+                            <li class="planned">
+                                <span class="status-dot"></span>
+                                <div class="phase-info">
+                                    <h4>Бета-тестування</h4>
+                                    <p>Полірування багів, оптимізація та підготовка до релізу.</p>
+                                </div>
+                            </li>
+                            <li class="planned">
+                                <span class="status-dot"></span>
+                                <div class="phase-info">
+                                    <h4>Реліз</h4>
+                                    <p>Публікація Spirits Of The Carpathians для гравців.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="roadmap-title">Загальний прогрес</h3>
+                        
+                        <div class="progress-item">
+                            <div class="progress-labels"><span>Механіки та Код</span> <span>35%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 35%;"></div></div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-labels"><span>Графіка та Спрайти</span> <span>50%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-labels"><span>Звук та Музика</span> <span>40%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-labels"><span>Лор та Сюжет</span> <span>30%</span></div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
+                        </div>
                     </div>
 
                 </div>
@@ -142,6 +233,42 @@
         </section>
     </main>
 
+    <section id="team" class="section">
+            <div class="container">
+                <h2>Команда розробників</h2>
+                <div class="team-grid">
+                    
+                    <div class="card team-card">
+                        <div class="avatar-placeholder">
+                            <img src="assets/matviu08.jpg" alt="Аватар Матвія" class="responsive-image avatar-img">
+                        </div>
+                        <h3>matviu08 (Matrasik)</h3>
+                        <span class="team-role">Full-stack розробник</span>
+                        <p>Як і вся команда, займався всім потроху: від написання коду та базової логіки до малювання піксель-арту, створення анімацій та UI.</p>
+                    </div>
+
+                    <div class="card team-card">
+                        <div class="avatar-placeholder text-avatar">
+                            <img src="assets/bobrickcs22.jpg" alt="Аватар BobrickCS22" class="responsive-image avatar-img">
+                        </div>
+                        <h3>BobrickCS22</h3>
+                        <span class="team-role">Full-stack розробник</span>
+                        <p>Універсальний боєць. Разом з іншими працював над загальною архітектурою, налаштуванням фізики, левел-дизайном та атмосферними звуками.</p>
+                    </div>
+
+                    <div class="card team-card">
+                        <div class="avatar-placeholder text-avatar">
+                            <img src="assets/forking2.jpg" alt="Аватар forking2" class="responsive-image avatar-img">
+                        </div>
+                        <h3>forking2</h3>
+                        <span class="team-role">Full-stack розробник</span>
+                        <p>Також доклав руку до всіх аспектів проєкту. Активно працював над рухом гравця, системами збереження та спільним поліруванням гри.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     <footer>
         <div class="container">
             <p>© 2026 matviu08, BobrickCS22, forking2. Всі права захищено.</p>
@@ -156,7 +283,9 @@
             <h3 id="lightbox-caption"></h3>
         </div>
     </div>
-
+    <div id="paranormal-overlay">
+        <h1 class="creepy-text">ЛІС ПАМ'ЯТАЄ...</h1>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
