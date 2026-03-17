@@ -431,6 +431,40 @@ footer {
     /* Важливо для піксель-арту, якщо картинка маленька і розтягується */
     image-rendering: pixelated; 
 }
+
+/* --- СТИЛІ ДЛЯ КАРТИНОК В ГАЛЕРЕЇ --- */
+.gallery-item {
+    flex-direction: column; /* Ставимо картинку і текст у стовпчик */
+    gap: 15px; /* Відстань між картинкою і текстом */
+    padding: 20px;
+}
+
+.gallery-img {
+    max-width: 100%;
+    max-height: 100px; /* Обмежуємо висоту, щоб усі плитки були рівними */
+    object-fit: contain; /* Картинка повністю влазить у блок без обрізання */
+    image-rendering: pixelated; /* Зберігаємо чіткість пікселів! */
+    transition: transform 0.3s ease;
+}
+
+/* Коли наводимо мишку на плитку, картинка трохи збільшується */
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+.sprite-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-color);
+    font-family: 'Orbitron', sans-serif; /* Використовуємо наш грандіозний шрифт */
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.gallery-item:hover .sprite-name {
+    color: var(--accent-color); /* Текст стає золотим при наведенні */
+}
+
 /* --- МОБІЛЬНА АДАПТАЦІЯ --- */
 @media (max-width: 900px) {
     h1 { font-size: 42px; }
