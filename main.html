@@ -4,126 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spirits Of The Carpathians</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main_style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">Spirits Of The Carpathians</div>
-                <button class="menu-toggle" id="mobile-menu">☰</button>
-                <nav id="nav-links">
-                    <a href="#about">Легенда</a>
-                    <a href="#mechanics">Механіки</a>
-                    <a href="#gallery">Галерея</a>
-                    <a href="#updates">Хроніки</a>
-                </nav>
-            </div>
-        </div>
-    </header>
 
-    <main style="padding-top: 120px;">
-        
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-content">
-                    <div class="text-block">
-                        <h2>Початок історії</h2>
-                        <div class="card story-card">
-                            <p>сюжет</p>
-                        </div>
-                    </div>
-                    <div class="image-block">
-                        <img src="assets/meinMenuBac.png" alt="концепт-арт" class="responsive-image">
-                    </div>
-                </div>
-            </div>
-        </section>
+<div id="particles"></div>
 
-        <section id="mechanics" class="section dark-section">
-            <div class="container">
-                <h2>Механіки</h2>
-                <div class="mechanics-grid">
-                    <div class="card mechanic-card">
-                        <div class="icon-placeholder">✦</div>
-                        <h3>механіка</h3>
-                        <p>опис механіки</p>
-                    </div>
-                    <div class="card mechanic-card">
-                        <div class="icon-placeholder">✦</div>
-                        <h3>механіка</h3>
-                        <p>опис механіки</p>
-                    </div>
-                    <div class="card mechanic-card">
-                        <div class="icon-placeholder">✦</div>
-                        <h3>механіка</h3>
-                        <p>опис механіки</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gallery" class="section">
-            <div class="container">
-                <h2>Галерея спрайтів</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">Персонаж (Idle)</div>
-                    <div class="gallery-item">Ворог 1</div>
-                    <div class="gallery-item">Фон рівня</div>
-                    <div class="gallery-item">Предмет (Зілля)</div>
-                    <div class="gallery-item">NPC 1</div>
-                    <div class="gallery-item">Бос</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="updates" class="section">
-            <div class="container">
-                <h2>Хроніки розробки (Девлог)</h2>
-                <div class="updates-timeline">
-                    <article class="post">
-                        <div class="post-header">
-                            <h3>коротко що добавили</h3>
-                            <span class="tag">дата</span>
-                        </div>
-                        <p>тексто що добавили</p>
-                    </article>
-                    
-                    <article class="post">
-                        <div class="post-header">
-                            <h3>коротко що добавили</h3>
-                            <span class="tag">дата</span>
-                        </div>
-                        <p>тексто що добавили</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>© 2026 matviu08, BobrickCS22, forking2. Всі права захищено.</p>
-                <div class="social-links">
-                    <a href="#" class="social-icon">TG</a>
-                    <a href="#" class="social-icon">GH</a>
-                    <a href="#" class="social-icon">YT</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <div class="lightbox-content">
-            <img id="lightbox-img" src="" alt="Спрайт" style="display: none;">
-            <div id="lightbox-placeholder"></div>
-            <h3 id="lightbox-caption"></h3>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">SOTC</div>
+            <button class="menu-toggle" id="mobile-menu">☰</button>
+            <nav id="nav-links">
+                <a href="#about">Легенда</a>
+                <a href="#mechanics">Механіки</a>
+                <a href="#gallery">Галерея</a>
+                <a href="#updates">Хроніки</a>
+            </nav>
         </div>
     </div>
+</header>
 
-    <script src="js/script.js"></script>
+<main style="padding-top: 120px;">
+
+<section id="about" class="section">
+    <div class="container">
+        <div class="section-content">
+            <div>
+                <h2>Початок історії</h2>
+                <div class="card">
+                    <p>
+                        У глибинах Карпат пробуджуються древні духи.
+                        Ліс більше не мовчить — він спостерігає.
+                        Ти — той, хто має пройти цей шлях.
+                    </p>
+                </div>
+            </div>
+
+            <div class="image-block">
+                <img src="assets/meinMenuBac.png" class="responsive-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="mechanics" class="section dark-section">
+    <div class="container">
+        <h2>Механіки</h2>
+
+        <div class="mechanics-grid">
+            <div class="card">
+                <div class="icon">✦</div>
+                <h3>Дослідження</h3>
+                <p>Відкривай таємниці лісу</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">✦</div>
+                <h3>Бій</h3>
+                <p>Стикайся з духами</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">✦</div>
+                <h3>Алхімія</h3>
+                <p>Створюй зілля</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery" class="section">
+    <div class="container">
+        <h2>Галерея</h2>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">Персонаж</div>
+            <div class="gallery-item">Ворог</div>
+            <div class="gallery-item">Ліс</div>
+            <div class="gallery-item">Зілля</div>
+        </div>
+    </div>
+</section>
+
+<section id="updates" class="section">
+    <div class="container">
+        <h2>Хроніки</h2>
+
+        <div class="post">
+            <h3>Старт розробки</h3>
+            <p>Створено базову систему руху.</p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Spirits Of The Carpathians</p>
+    </div>
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <div class="lightbox-content">
+        <div id="lightbox-placeholder"></div>
+        <h3 id="lightbox-caption"></h3>
+    </div>
+</div>
+
+<script src="js/main_script.js"></script>
 </body>
 </html>

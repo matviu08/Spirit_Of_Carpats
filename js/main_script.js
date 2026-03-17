@@ -6,21 +6,21 @@ document.body.appendChild(particlesContainer);
 function createParticle() {
     const p = document.createElement('div');
     p.classList.add('particle');
-    const size = Math.random()*5+2;
+    const size = Math.random()*4 + 2;
     p.style.width = size+'px';
     p.style.height = size+'px';
     p.style.left = Math.random()*window.innerWidth+'px';
-    p.style.top = window.innerHeight+'px';
+    p.style.top = Math.random()*window.innerHeight+'px';
     p.style.opacity = Math.random();
-    const duration = 5 + Math.random()*5;
+    const duration = 4 + Math.random()*4;
     p.animate([
-        { transform:'translateY(0) translateX(0) rotate(0deg)', opacity:p.style.opacity },
-        { transform:`translateY(-${window.innerHeight+50}px) translateX(${Math.random()*100-50}px) rotate(${Math.random()*360}deg)`, opacity:0 }
+        { transform:'translateY(0px)', opacity: p.style.opacity },
+        { transform:'translateY(-150px)', opacity:0 }
     ], { duration: duration*1000, iterations:1, easing:'linear' });
     particlesContainer.appendChild(p);
     setTimeout(()=>p.remove(), duration*1000);
 }
-setInterval(createParticle,100);
+setInterval(createParticle,120);
 
 // ====== ЛИСТЯ / МАГІЧНІ ЧАСТИНКИ ======
 const leavesContainer = document.createElement('div');
@@ -32,23 +32,23 @@ function createLeaf() {
     leaf.classList.add('leaf');
     leaf.style.left = Math.random()*window.innerWidth+'px';
     leaf.style.top = window.innerHeight+'px';
-    leaf.style.opacity = 0.2+Math.random()*0.8;
+    leaf.style.opacity = 0.3+Math.random()*0.7;
     const speed = 4000+Math.random()*4000;
     leaf.animate([
         { transform:'translateY(0px) rotate(0deg)' },
-        { transform:`translateY(-${window.innerHeight + 100}px) rotate(${Math.random()*360}deg)` }
+        { transform:`translateY(-${window.innerHeight + 50}px) rotate(${Math.random()*360}deg)` }
     ], { duration:speed, iterations:1, easing:'linear' });
     leavesContainer.appendChild(leaf);
     setTimeout(()=>leaf.remove(), speed);
 }
-setInterval(createLeaf,300);
+setInterval(createLeaf,350);
 
-// ====== МЕНЮ ======
+// ====== МЕНЮ МОБІЛЬНЕ ======
 const menuToggle = document.getElementById('mobile-menu');
 const nav = document.getElementById('nav-links');
 menuToggle.addEventListener('click',()=>{ nav.classList.toggle('active'); });
 
-// ====== LIGHTBOX ======
+// ====== LIGHTBOX (якщо потрібен) ======
 document.querySelectorAll('.gallery-item').forEach(item=>{
     item.addEventListener('click',()=>{
         const lb = document.getElementById('lightbox');
