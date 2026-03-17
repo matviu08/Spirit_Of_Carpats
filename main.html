@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelQuest - Девлог</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">PixelQuest</div>
+                <button class="menu-toggle" id="mobile-menu">☰</button>
+                <nav id="nav-links">
+                    <a href="#about">Легенда</a>
+                    <a href="#mechanics">Арсенал</a>
+                    <a href="#gallery">Галерея</a>
+                    <a href="#updates">Хроніки</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="padding-top: 120px;">
+        
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-content">
+                    <div class="text-block">
+                        <h2>Початок історії</h2>
+                        <div class="card story-card">
+                            <p>Тут ти можеш описати лор своєї гри. Хто головний герой? Яка його мета? Які перешкоди стоять на його шляху? Гравцям завжди цікаво дізнаватися про всесвіт гри ще до того, як вони зможуть у неї пограти.</p>
+                        </div>
+                    </div>
+                    <div class="image-block">
+                        <img src="assets/meinMenuBac.png" alt="концепт-арт" class="responsive-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mechanics" class="section dark-section">
+            <div class="container">
+                <h2>Арсенал механік</h2>
+                <div class="mechanics-grid">
+                    <div class="card mechanic-card">
+                        <div class="icon-placeholder">✦</div>
+                        <h3>Майстерність бою</h3>
+                        <p>Опиши, як гравець буде битися: комбо, суперудари, види зброї.</p>
+                    </div>
+                    <div class="card mechanic-card">
+                        <div class="icon-placeholder">✦</div>
+                        <h3>Шлях мандрівника</h3>
+                        <p>Опиши, як герой переміщується: стрибки, підкати, біг по стінах.</p>
+                    </div>
+                    <div class="card mechanic-card">
+                        <div class="icon-placeholder">✦</div>
+                        <h3>Таємні знання</h3>
+                        <p>Розкажи про унікальні магічні сили або навички героя.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2>Галерея спрайтів</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">Персонаж (Idle)</div>
+                    <div class="gallery-item">Ворог 1</div>
+                    <div class="gallery-item">Фон рівня</div>
+                    <div class="gallery-item">Предмет (Зілля)</div>
+                    <div class="gallery-item">NPC 1</div>
+                    <div class="gallery-item">Бос</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="updates" class="section">
+            <div class="container">
+                <h2>Хроніки розробки (Девлог)</h2>
+                <div class="updates-timeline">
+                    <article class="post">
+                        <div class="post-header">
+                            <h3>Створення системи діалогів</h3>
+                            <span class="tag">17 березня 2026</span>
+                        </div>
+                        <p>Сьогодні я працював над тим, щоб NPC могли спілкуватися з гравцем. Зробив просте вікно тексту внизу екрана та додав ефект "друкування" букв по черзі.</p>
+                    </article>
+                    
+                    <article class="post">
+                        <div class="post-header">
+                            <h3>Перші начерки головного героя</h3>
+                            <span class="tag">10 березня 2026</span>
+                        </div>
+                        <p>Вирішив зупинитися на палітрі з 16 кольорів. Головний герой тепер має базову анімацію ходьби з 4 кадрів. Далі планую намалювати анімацію стрибка.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2026 Матвій. Всі права захищено.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">TG</a>
+                    <a href="#" class="social-icon">GH</a>
+                    <a href="#" class="social-icon">YT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Спрайт" style="display: none;">
+            <div id="lightbox-placeholder"></div>
+            <h3 id="lightbox-caption"></h3>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
