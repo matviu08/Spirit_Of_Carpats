@@ -1,172 +1,91 @@
 :root {
-    --bg: #0b1a0f;
-    --card: #13261a;
+    --bg: #08140d;
     --accent: #6fcf97;
+    --accent-glow: #8affc1;
     --text: #d8e6d2;
 }
 
+* { margin:0; padding:0; box-sizing:border-box; }
+
 body {
-    margin: 0;
     font-family: 'Press Start 2P', monospace;
-    background: var(--bg);
+    background: linear-gradient(#050d07, #0b1a0f);
     color: var(--text);
+    overflow: hidden;
+    height: 100vh;
 }
 
-/* HERO */
+/* PARTICLES */
+#particles, #leaves {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top:0; left:0;
+    z-index:0;
+}
+.particle, .leaf {
+    position:absolute;
+    border-radius:50%;
+    box-shadow:0 0 10px var(--accent-glow);
+}
+
+/* HERO SECTION */
 #hero {
+    position: relative;
+    width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url('../assets/carpathian_forest_pixel.png') center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1;
 }
 
 .hero-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
+    position:absolute;
+    top:0; left:0; width:100%; height:100%;
+    background: rgba(0,0,0,0.6);
+    z-index:0;
 }
 
 .hero-content {
     position: relative;
     text-align: center;
+    z-index:1;
+}
+
+.hero-content h1 {
+    font-size:32px;
+    color: var(--accent);
+    text-shadow:0 0 20px var(--accent-glow);
+    margin-bottom:20px;
+}
+
+.hero-content .sub-title {
+    font-size:12px;
+    color: var(--accent-glow);
+    text-shadow:0 0 15px var(--accent-glow);
+    display:block;
+    margin-bottom:10px;
+}
+
+.hero-content p {
+    font-size:12px;
+    margin-bottom:20px;
 }
 
 .btn {
-    border: 2px solid var(--accent);
-    padding: 10px 20px;
-    color: var(--accent);
-    text-decoration: none;
+    display:inline-block;
+    padding:10px 20px;
+    color: var(--text);
+    background: var(--accent);
+    text-decoration:none;
+    border-radius:6px;
+    box-shadow:0 0 15px var(--accent-glow);
+    transition:0.3s;
 }
 
-.section {
-    padding: 80px 20px;
-}
-
-.card {
-    background: var(--card);
-    padding: 20px;
-    margin: 10px 0;
-}
-
-/* PARTICLES */
-#particles {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
-
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #8affc1;
-    border-radius: 50%;
-    animation: float 6s infinite;
-}
-
-<<<<<<< HEAD
-@keyframes float {
-    0% { opacity:0; transform:translateY(0); }
-    50% { opacity:1; }
-    100% { transform:translateY(-100px); opacity:0; }
-=======
-.close-lightbox:hover {
-    color: var(--accent-color);
-}
-/* Обгортка для картинки */
-.image-block {
-    width: 100%;
-    height: 350px; /* Фіксуємо висоту, щоб блок був акуратним */
-    border-radius: 8px; /* Заокруглюємо кути, як у інших карток */
-    overflow: hidden; /* Обрізаємо все, що виходить за межі кутів */
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-}
-
-/* Сама картинка */
-.responsive-image {
-    width: 100%;
-    height: 100%;
-    /* object-fit: cover заповнить увесь блок картинкою (може трохи обрізати краї) */
-    /* Якщо хочеш, щоб картинка влазила ПОВНІСТЮ без обрізки, заміни 'cover' на 'contain' */
-    object-fit: cover; 
-    display: block;
-    /* Важливо для піксель-арту, якщо картинка маленька і розтягується */
-    image-rendering: pixelated; 
-}
-
-/* --- СТИЛІ ДЛЯ КАРТИНОК В ГАЛЕРЕЇ --- */
-.gallery-item {
-    flex-direction: column; /* Ставимо картинку і текст у стовпчик */
-    gap: 15px; /* Відстань між картинкою і текстом */
-    padding: 20px;
-}
-
-.gallery-img {
-    max-width: 100%;
-    max-height: 100px; /* Обмежуємо висоту, щоб усі плитки були рівними */
-    object-fit: contain; /* Картинка повністю влазить у блок без обрізання */
-    image-rendering: pixelated; /* Зберігаємо чіткість пікселів! */
-    transition: transform 0.3s ease;
-}
-
-/* Коли наводимо мишку на плитку, картинка трохи збільшується */
-.gallery-item:hover .gallery-img {
-    transform: scale(1.1);
-}
-
-.sprite-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-color);
-    font-family: 'Orbitron', sans-serif; /* Використовуємо наш грандіозний шрифт */
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-.gallery-item:hover .sprite-name {
-    color: var(--accent-color); /* Текст стає золотим при наведенні */
-}
-
-/* --- МОБІЛЬНА АДАПТАЦІЯ --- */
-@media (max-width: 900px) {
-    h1 { font-size: 42px; }
-    .section-content { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 600px) {
-    .menu-toggle { display: block; }
-    
-    nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--bg-color);
-        flex-direction: column;
-        text-align: center;
-        border-bottom: 2px solid var(--accent-color);
-    }
-
-    nav.active { display: flex; }
-
-    nav a {
-        margin: 0;
-        padding: 20px 0;
-        border-top: 1px solid var(--border-color);
-    }
-
-    h1 { font-size: 32px; }
-    
-    .mechanics-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr; }
-    
-    .close-lightbox {
-        right: 10px;
-        top: -40px;
-    }
->>>>>>> 6911e5b4f85565e3c754a636d8a06ac5cc3327f7
+.btn:hover {
+    box-shadow:0 0 30px var(--accent-glow);
+    transform: scale(1.05);
 }
