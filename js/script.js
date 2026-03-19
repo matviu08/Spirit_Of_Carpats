@@ -30,20 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (particlesContainer) setInterval(createParticle, 300);
 
 
-    // ====== МОБІЛЬНЕ МЕНЮ ======
+// ====== МОБІЛЬНЕ МЕНЮ ======
     const mobileMenuBtn = document.getElementById('mobile-menu');
     const navLinks = document.getElementById('nav-links');
 
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                mobileMenuBtn.innerHTML = '✕';
+            } else {
+                mobileMenuBtn.innerHTML = '☰';
+            }
         });
 
         const links = navLinks.querySelectorAll('a');
         links.forEach(link => {
             link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
+                // МАГІЯ ТУТ: Змінили 768 на 1024, щоб меню закривалося і на планшетах!
+                if (window.innerWidth <= 1024) {
                     navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '☰';
                 }
             });
         });
@@ -169,3 +177,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+

@@ -552,6 +552,42 @@ footer { background:#050d07; padding:30px; border-top:1px solid var(--border); t
     line-height: 1.5;
 }
 
+/* --- ПЕРСОНАЛЬНІ КНОПКИ GITHUB У КАРТКАХ --- */
+
+/* Робимо так, щоб кнопка завжди була внизу картки, навіть якщо текст різної довжини */
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.team-card p {
+    font-size: 11px;
+    color: var(--text);
+    line-height: 1.5;
+    flex-grow: 1; /* Змушує текст займати весь вільний простір */
+    margin-bottom: 20px;
+}
+
+.member-github-btn {
+    background-color: transparent;
+    color: var(--accent-glow);
+    border: 1px solid var(--accent);
+    padding: 10px 15px;
+    font-size: 10px;
+    box-shadow: 0 0 10px rgba(111,207,151,0.1);
+    width: 100%; /* Розтягує кнопку на ширину картки */
+    margin-top: auto; /* Притискає кнопку до самого низу */
+}
+
+.member-github-btn:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 15px var(--accent-glow);
+    border-color: var(--accent-glow);
+}
+
 /* Мобільна адаптація */
 @media(max-width: 768px) {
     .roadmap-content {
@@ -585,46 +621,107 @@ footer { background:#050d07; padding:30px; border-top:1px solid var(--border); t
 }
 
 @media(max-width: 768px) {
-    /* --- Фікс для шапки (Header) --- */
-    .header-content {
-        padding: 15px 20px; /* Гарантовані 20px відступу по боках */
-    }
-
-    .logo {
-        font-size: 10px; /* Зменшуємо піксельний шрифт, щоб влізло */
-        line-height: 1.4;
-        max-width: 80%; /* Залишаємо 20% місця для кнопки меню */
-    }
-
-    .menu-toggle { 
-        display: block; 
-        font-size: 20px;
-    }
+    /* Шапка залишається як була */
+    header { z-index: 2005; }
+    .header-content { padding: 15px 20px; }
+    .logo { font-size: 10px; line-height: 1.4; max-width: 70%; }
+    .menu-toggle { display: block; font-size: 24px; transition: transform 0.3s ease; }
     
-    /* --- Фікс для мобільного меню --- */
+    /* --- ОНОВЛЕНА БОКОВА ШТОРКА (З ВІДСТУПОМ) --- */
     nav { 
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        width: 100%; 
-        background: rgba(5,15,8,0.98); 
+        display: flex; 
+        position: fixed; 
+        top: 73px; /* МАГІЯ ТУТ: відступаємо 65px зверху (висота твоєї шапки) */
+        right: -100%; 
+        width: 70%; 
+        max-width: 280px;
+        height: calc(100vh - 65px); /* Висота екрана МІНУС ці 65px відступу */
+        background: var(--card); 
+        border-left: 2px solid var(--accent); 
+        border-top: 2px solid var(--accent); /* Додав рамку ще й зверху, щоб виглядало як панелька */
+        box-shadow: -10px 10px 30px rgba(0,0,0,0.9); 
         flex-direction: column; 
-        text-align: center; 
-        border-bottom: 1px solid var(--border); 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5); 
+        justify-content: flex-start; 
+        padding-top: 20px; /* Тепер великий відступ не потрібен, текст йде одразу */
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); 
+        z-index: 2000; 
     }
     
-    nav.active { display: flex; }
+    nav.active { 
+        right: 0; 
+    }
     
     nav a { 
         margin: 0; 
-        padding: 20px 5%; 
-        border-top: 1px solid var(--border); 
+        padding: 20px 25px; 
+        border: none;
+        border-bottom: 1px dashed var(--border); 
+        font-size: 12px; 
+        text-align: left;
+    }
+
+    .nav-github-btn {
+        margin: 20px !important;
+        text-align: center;
+        border: 1px solid var(--accent) !important;
     }
     
     .close-lightbox { 
         top: 10px; 
         right: 20px; 
     }
+}
+
+/* --- ПЛАНШЕТИ (до 1090px) --- */
+@media(max-width: 1090px) {
+    /* Робимо блоки в 1 колонку, щоб їм не було тісно */
+    .section-content { grid-template-columns: 1fr; }
+    .roadmap-content { grid-template-columns: 1fr; gap: 30px; }
+
+    /* Шапка */
+    header { z-index: 2005; }
+    .header-content { padding: 15px 20px; }
+    .logo { font-size: 12px; line-height: 1.4; max-width: 80%; }
+    
+    /* Вмикаємо бургер-меню для планшетів */
+    .menu-toggle { display: block; font-size: 26px; transition: transform 0.3s ease; }
+    
+    /* Бокова шторка */
+    nav { 
+        display: flex; 
+        position: fixed; 
+        top: 73px; 
+        right: -100%; 
+        width: 50%; /* На планшеті меню займає половину екрана */
+        max-width: 320px;
+        height: calc(100vh - 65px); 
+        background: var(--card); 
+        border-left: 2px solid var(--accent); 
+        border-top: 2px solid var(--accent); 
+        box-shadow: -10px 10px 30px rgba(0,0,0,0.9); 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        padding-top: 20px; 
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1); 
+        z-index: 2000; 
+    }
+    
+    nav.active { right: 0; }
+    
+    nav a { 
+        margin: 0; 
+        padding: 20px 25px; 
+        border: none;
+        border-bottom: 1px dashed var(--border); 
+        font-size: 12px; 
+        text-align: left;
+    }
+
+    .nav-github-btn {
+        margin: 20px !important;
+        text-align: center;
+        border: 1px solid var(--accent) !important;
+    }
+
+    .close-lightbox { top: 10px; right: 20px; }
 }
