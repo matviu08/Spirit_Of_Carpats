@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYSTEM://LINK Chat</title>
+<link rel="stylesheet" href="./css/comunity_styles.css">
+</head>
+<body>
+
+<div class="chat-container">
+
+    <!-- HEADER -->
+    <div class="chat-header">
+        <span>SYSTEM://LINK v1.0</span>
+        <span id="liveTime"></span>
+    </div>
+
+    <!-- NICKNAME -->
+    <div class="chat-user">
+        <input type="text" id="nicknameInput" placeholder="Введи свій нікнейм">
+        <button onclick="saveNick()">OK</button>
+    </div>
+
+    <!-- CHAT WINDOW -->
+    <div class="chat-windows">
+
+        <!-- Коментарі -->
+        <div class="chat-box">
+            <div class="chat-title">Обговорення</div>
+            <div id="comments" class="chat-content"></div>
+            <div class="chat-input">
+                <input type="text" id="commentInput" placeholder="Написати коментар...">
+                <button onclick="sendComment()">▶</button>
+            </div>
+        </div>
+
+        <!-- Чат -->
+        <div class="chat-box">
+            <div class="chat-title">Чат</div>
+            <div id="chat" class="chat-content"></div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Напиши повідомлення...">
+                <button onclick="sendMessage()">▶</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="./js/community_script.js"></script>
+</body>
+</html>
