@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    
+
     <div id="particles"></div>
     <div id="leaves"></div>
 
@@ -33,9 +35,14 @@
                 <div class="text-block">
                     <h2>Глава 1: Поклик Карпат</h2>
                     <div class="card story-card">
-                        <p>Головний герой — колишній лісничий, який повертається до рідних лісів Карпат заради ностальгії. Знайомі стежки та залишені колись позначки для туристів викликають теплі спогади.</p>
-                        <p>Вирушивши до своєї старої наглядової вишки, герой бере до рук сокиру і раптом ловить моторошний флешбек із невідомим голосом. Проігнорувавши попередження, він зрубує хворе дерево... і пробуджує щось паранормальне.</p>
-                        <p>Звідкись прилітає газета з майбутнього. Раптовий удар. Темрява. Так закінчується перша глава.</p>
+                        <p>Головний герой — колишній лісничий, який повертається до рідних лісів Карпат заради
+                            ностальгії. Знайомі стежки та залишені колись позначки для туристів викликають теплі
+                            спогади.</p>
+                        <p>Вирушивши до своєї старої наглядової вишки, герой бере до рук сокиру і раптом ловить
+                            моторошний флешбек із невідомим голосом. Проігнорувавши попередження, він зрубує хворе
+                            дерево... і пробуджує щось паранормальне.</p>
+                        <p>Звідкись прилітає газета з майбутнього. Раптовий удар. Темрява. Так закінчується перша глава.
+                        </p>
                     </div>
                 </div>
                 <div class="image-block">
@@ -48,23 +55,26 @@
             <div class="container">
                 <h2>Арсенал механік</h2>
                 <div class="mechanics-grid">
-                    
+
                     <div class="card mechanic-card">
                         <div class="icon">🏃</div>
                         <h3>Вдосконалений рух</h3>
-                        <p>Повністю кастомна система переміщення гравця (BetterPlayerMovement). Плавні стрибки, чітке керування та нові анімації для максимального контролю в платформінгу.</p>
+                        <p>Повністю кастомна система переміщення гравця (BetterPlayerMovement). Плавні стрибки, чітке
+                            керування та нові анімації для максимального контролю в платформінгу.</p>
                     </div>
-                    
+
                     <div class="card mechanic-card">
                         <div class="icon">🌍</div>
                         <h3>Система локацій</h3>
-                        <p>Безшовне перемикання між рівнями завдяки власному LocationService. Кожна зона має свої моделі, унікальну музику та багатошаровий дизайн (Added3Layer).</p>
+                        <p>Безшовне перемикання між рівнями завдяки власному LocationService. Кожна зона має свої
+                            моделі, унікальну музику та багатошаровий дизайн (Added3Layer).</p>
                     </div>
-                    
+
                     <div class="card mechanic-card">
                         <div class="icon">💾</div>
                         <h3>Збереження прогресу</h3>
-                        <p>Надійна система SaveService, яка фіксує всі досягнення. Гравці можуть налаштовувати гру під себе у детальному меню опцій, і всі дані будуть збережені.</p>
+                        <p>Надійна система SaveService, яка фіксує всі досягнення. Гравці можуть налаштовувати гру під
+                            себе у детальному меню опцій, і всі дані будуть збережені.</p>
                     </div>
 
                 </div>
@@ -75,22 +85,22 @@
             <div class="container">
                 <h2>Галерея спрайтів та фонів</h2>
                 <div class="gallery-grid">
-                    
+
                     <div class="gallery-item">
                         <img src="assets/standing.png" alt="Спрайт" class="gallery-img">
                         <span class="sprite-name">Лісничий (Idle)</span>
                     </div>
-                    
+
                     <div class="gallery-item">
                         <img src="assets/newspaper.png" alt="Спрайт" class="gallery-img">
                         <span class="sprite-name">Газета з майбутнього</span>
                     </div>
-                    
+
                     <div class="gallery-item" id="secret-tree">
                         <img src="assets/sickTree.png" alt="Спрайт" class="gallery-img">
                         <span class="sprite-name">Хворе дерево</span>
                     </div>
-                    
+
                     <div class="gallery-item">
                         <img src="assets/location.png" alt="Спрайт" class="gallery-img">
                         <span class="sprite-name">Карпатський ліс</span>
@@ -109,19 +119,19 @@
                 </div>
                 <div class="audio-section">
                     <h3 class="sub-heading">Аудіоархів: Звуки лісу</h3>
-                    
+
                     <div class="retro-player" id="retro-player">
                         <div class="cassette-window">
                             <div class="reel"></div>
                             <div class="tape-bridge"></div>
                             <div class="reel"></div>
                         </div>
-                        
+
                         <div class="player-info">
                             <span class="track-name">meinMusic.mp3</span>
                             <span class="track-status" id="track-status">Зупинено</span>
                         </div>
-                        
+
                         <div class="player-controls">
                             <button id="play-btn" class="btn play-btn">▶ PLAY</button>
                         </div>
@@ -175,25 +185,33 @@
 
                     <div class="card">
                         <h3 class="roadmap-title">Загальний прогрес</h3>
-                        
+
                         <div class="progress-item">
                             <div class="progress-labels"><span>Механіки та Код</span> <span>35%</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 35%;"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 35%;"></div>
+                            </div>
                         </div>
 
                         <div class="progress-item">
                             <div class="progress-labels"><span>Графіка та Спрайти</span> <span>50%</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%;"></div>
+                            </div>
                         </div>
 
                         <div class="progress-item">
                             <div class="progress-labels"><span>Звук та Музика</span> <span>40%</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%;"></div>
+                            </div>
                         </div>
 
                         <div class="progress-item">
                             <div class="progress-labels"><span>Лор та Сюжет</span> <span>30%</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 30%;"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -205,13 +223,32 @@
             <div class="container">
                 <h2>Хроніки розробки (Девлог)</h2>
                 <div class="updates-timeline">
-                    
+
+                    <article class="post">
+                        <div class="post-header">
+                            <h3>Фізика(БЕТА)</h3>
+                            <span class="tag">Оновлення фізики 13/04/2026</span>
+                        </div>
+                        <p>Проведено масштабне оновлення фізичного рушія гри розробником (<strong>BobrickCS22</strong>).
+                            У рамках цього етапу було закладено основу для нової системи освітлення: реалізовано перші
+                            механіки взаємодії світла з об’єктами, додано базову модель його поширення та затухання, що
+                            вже дозволяє створювати більш глибоку й атмосферну візуальну складову.
+
+                            Разом із цим триває активна робота над удосконаленням фізики — зокрема, система колізій усе
+                            ще перебуває в процесі доопрацювання. Виявлені неточності та нестабільності поступово
+                            виправляються, і в найближчих оновленнях очікується суттєве покращення її роботи.</p>
+                    </article>
+
+
+
                     <article class="post">
                         <div class="post-header">
                             <h3>Генерація локації, атмосфера</h3>
                             <span class="tag">Оновлення локіції 23/03/2026</span>
                         </div>
-                        <p>Була виконна робота над генерацією локацій та створенням атмосфери.Мною (<strong>BobrickCS22</strong>) було зроблено перше оновлення атмосфери локації, тепер світ став ширший. В данний момент виконуються роботи над колізією.</p>
+                        <p>Була виконна робота над генерацією локацій та створенням атмосфери.Мною
+                            (<strong>BobrickCS22</strong>) було зроблено перше оновлення атмосфери локації, тепер світ
+                            став ширший. В данний момент виконуються роботи над колізією.</p>
                     </article>
 
 
@@ -220,7 +257,11 @@
                             <h3>Фізика, Рух та Анімації</h3>
                             <span class="tag">Оновлення Beta</span>
                         </div>
-                        <p>Останні кілька днів ми активно працювали над ядром гри. <strong>BobrickCS22</strong> викотив нову бету фізики (Physics_Beta!), що зробило світ більш живим (додано генерацію хмар). Тим часом <strong>forking2</strong> переписав систему керування на BetterPlayerMovement. Я (Матвій) підв'язав під це нові спрайти та анімації. Тепер персонаж відчувається дуже динамічно!</p>
+                        <p>Останні кілька днів ми активно працювали над ядром гри. <strong>BobrickCS22</strong> викотив
+                            нову бету фізики (Physics_Beta!), що зробило світ більш живим (додано генерацію хмар). Тим
+                            часом <strong>forking2</strong> переписав систему керування на BetterPlayerMovement. Я
+                            (Матвій) підв'язав під це нові спрайти та анімації. Тепер персонаж відчувається дуже
+                            динамічно!</p>
                     </article>
 
                     <article class="post">
@@ -228,15 +269,21 @@
                             <h3>Система локацій та збережень</h3>
                             <span class="tag">Архітектура</span>
                         </div>
-                        <p>Велика робота "під капотом". Ми реалізували повноцінне перемикання між локаціями. <strong>BobrickCS22</strong> оновив моделі та LocationService, а <strong>forking2</strong> закінчив роботу над SaveService, щоб прогрес між цими локаціями не втрачався. Також додали підтримку трьох шарів для рівнів (Added3Layer) для створення ефекту глибини.</p>
+                        <p>Велика робота "під капотом". Ми реалізували повноцінне перемикання між локаціями.
+                            <strong>BobrickCS22</strong> оновив моделі та LocationService, а <strong>forking2</strong>
+                            закінчив роботу над SaveService, щоб прогрес між цими локаціями не втрачався. Також додали
+                            підтримку трьох шарів для рівнів (Added3Layer) для створення ефекту глибини.</p>
                     </article>
-                    
+
                     <article class="post">
                         <div class="post-header">
                             <h3>Головне меню, опції та звук</h3>
                             <span class="tag">UI / UX</span>
                         </div>
-                        <p>Гра нарешті отримує своє "обличчя". Я частково завершив логіку головного меню та створив повноцінне вікно налаштувань, де тепер можна перемикати опції. Додав фонову музику та нові зображення, а <strong>BobrickCS22</strong> озвучив інтерфейс (створено hover_sound.wav для кнопок). Проєкт зібрано до купи, баги пофікшено!</p>
+                        <p>Гра нарешті отримує своє "обличчя". Я частково завершив логіку головного меню та створив
+                            повноцінне вікно налаштувань, де тепер можна перемикати опції. Додав фонову музику та нові
+                            зображення, а <strong>BobrickCS22</strong> озвучив інтерфейс (створено hover_sound.wav для
+                            кнопок). Проєкт зібрано до купи, баги пофікшено!</p>
                     </article>
 
                 </div>
@@ -245,45 +292,51 @@
     </main>
 
     <section id="team" class="section">
-            <div class="container">
-                <h2>Команда розробників</h2>
-                <div class="team-grid">
-                    
-                    <div class="card team-card">
-                        <div class="avatar-placeholder">
-                            <img src="assets/matviu08.jpg" alt="Аватар Матвія" class="responsive-image avatar-img">
-                        </div>
-                        <h3>Матвій (matviu08)</h3>
-                        <span class="team-role">Full-stack розробник</span>
-                        <p>Як і вся команда, займався всім потроху: від написання коду та базової логіки до малювання піксель-арту, створення анімацій та UI.</p>
-                        <a href="https://github.com/matviu08" target="_blank" class="btn member-github-btn">Профіль GitHub</a>
-                    </div>
+        <div class="container">
+            <h2>Команда розробників</h2>
+            <div class="team-grid">
 
-                    <div class="card team-card">
-                        <div class="avatar-placeholder text-avatar">
-                            <img src="assets/BobrickCS22.jpg" alt="Аватар BobrickCS22" class="responsive-image avatar-img">
-                        </div>
-                        <h3>BobrickCS22</h3>
-                        <span class="team-role">Full-stack розробник</span>
-                        <p>Універсальний боєць. Разом з іншими працював над загальною архітектурою, налаштуванням фізики, левел-дизайном та атмосферними звуками.</p>
-                        <a href="https://github.com/BobrickCS22" target="_blank" class="btn member-github-btn">Профіль GitHub</a>
+                <div class="card team-card">
+                    <div class="avatar-placeholder">
+                        <img src="assets/matviu08.jpg" alt="Аватар Матвія" class="responsive-image avatar-img">
                     </div>
-
-                    <div class="card team-card">
-                        <div class="avatar-placeholder text-avatar">
-                            <img src="assets/forking2.jpg" alt="Аватар forking2" class="responsive-image avatar-img">
-                        </div>
-                        <h3>forking2</h3>
-                        <span class="team-role">Full-stack розробник</span>
-                        <p>Також доклав руку до всіх аспектів проєкту. Активно працював над рухом гравця, системами збереження та спільним поліруванням гри.</p>
-                        <a href="https://github.com/forking2" target="_blank" class="btn member-github-btn">Профіль GitHub</a>
-                    </div>
-
+                    <h3>Матвій (matviu08)</h3>
+                    <span class="team-role">Full-stack розробник</span>
+                    <p>Як і вся команда, займався всім потроху: від написання коду та базової логіки до малювання
+                        піксель-арту, створення анімацій та UI.</p>
+                    <a href="https://github.com/matviu08" target="_blank" class="btn member-github-btn">Профіль
+                        GitHub</a>
                 </div>
-            </div>
-        </section>
 
-        
+                <div class="card team-card">
+                    <div class="avatar-placeholder text-avatar">
+                        <img src="assets/BobrickCS22.jpg" alt="Аватар BobrickCS22" class="responsive-image avatar-img">
+                    </div>
+                    <h3>BobrickCS22</h3>
+                    <span class="team-role">Full-stack розробник</span>
+                    <p>Універсальний боєць. Разом з іншими працював над загальною архітектурою, налаштуванням фізики,
+                        левел-дизайном та атмосферними звуками.</p>
+                    <a href="https://github.com/BobrickCS22" target="_blank" class="btn member-github-btn">Профіль
+                        GitHub</a>
+                </div>
+
+                <div class="card team-card">
+                    <div class="avatar-placeholder text-avatar">
+                        <img src="assets/forking2.jpg" alt="Аватар forking2" class="responsive-image avatar-img">
+                    </div>
+                    <h3>forking2</h3>
+                    <span class="team-role">Full-stack розробник</span>
+                    <p>Також доклав руку до всіх аспектів проєкту. Активно працював над рухом гравця, системами
+                        збереження та спільним поліруванням гри.</p>
+                    <a href="https://github.com/forking2" target="_blank" class="btn member-github-btn">Профіль
+                        GitHub</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
     <footer>
         <div class="container">
             <p>© 2026 matviu08, BobrickCS22, forking2. Всі права захищено.</p>
@@ -303,4 +356,5 @@
     </div>
     <script src="js/script.js"></script>
 </body>
+
 </html>
