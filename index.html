@@ -3,27 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spirits Of The Carpathians - Вхід</title>
+    <title data-i18n="page.indexTitle">Spirits Of The Carpathians - Вхід</title>
+    <meta name="description" content="Spirits Of The Carpathians — атмосферна 2D піксель-арт гра про лісничого, що зіткнувся з паранормальними силами Карпатських гір. Тепер розробляється на Unity Engine.">
+    <meta property="og:title" content="Spirits Of The Carpathians">
+    <meta property="og:description" content="Піксельна подорож крізь темні ліси, духів та давні легенди Карпат.">
+    <meta property="og:image" content="assets/meinMenuBac.png">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305040f'/%3E%3Cpath d='M16 4 L26 26 L6 26 Z' fill='none' stroke='%23c49a3c' stroke-width='2'/%3E%3Ccircle cx='16' cy='18' r='2.5' fill='%23e8c35a'/%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="overflow: hidden;">
 
+    <div id="cursor-glow"></div>
     <div id="particles"></div>
     <div id="leaves"></div>
+
+    <button id="lang-toggle" class="lang-toggle lang-toggle-floating" aria-label="Switch language">EN</button>
 
     <section id="hero">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <span class="sub-title">СТВОРЕННЯ ЛЕГЕНДИ</span>
+                <span class="engine-badge"><span class="engine-mark">▲</span><span data-i18n="hero.badge">Тепер розробляється на Unity Engine</span></span>
+                <span class="sub-title" data-i18n="hero.subtitle">СТВОРЕННЯ ЛЕГЕНДИ</span>
                 <h1>SPIRITS OF THE CARPATHIANS</h1>
-                <p>Піксельна подорож крізь темні ліси, духів та давні легенди. Розробляється matviu08, BobrickCS22, forking2.</p>
-                <a href="main.html" class="btn">Увійти у світ</a>
+                <p data-i18n="hero.text">Піксельна подорож крізь темні ліси, духів та давні легенди. Розробляється matviu08, BobrickCS22, forking2.</p>
+                <a href="main.html" class="btn" data-i18n="hero.cta">Увійти у світ</a>
             </div>
         </div>
     </section>
 
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

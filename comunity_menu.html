@@ -3,23 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SYSTEM://LINK Chat</title>
+<title data-i18n="page.communityTitle">SYSTEM://LINK Chat — Spirits Of The Carpathians</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305040f'/%3E%3Cpath d='M16 4 L26 26 L6 26 Z' fill='none' stroke='%23c49a3c' stroke-width='2'/%3E%3Ccircle cx='16' cy='18' r='2.5' fill='%23e8c35a'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/comunity_styles.css">
 </head>
 <body>
 
+<div class="ambient-glow"></div>
+
 <div class="chat-container">
+
+    <div class="community-top">
+        <a href="main.html" class="back-link" data-i18n="community.back">← Повернутись на сайт</a>
+        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">EN</button>
+    </div>
 
     <!-- HEADER -->
     <div class="chat-header">
-        <span>SYSTEM://LINK v1.0</span>
+        <span class="chat-header-title"><span class="engine-mark">▲</span> SYSTEM://LINK v1.0</span>
         <span id="liveTime"></span>
     </div>
 
     <!-- NICKNAME -->
     <div class="chat-user">
-        <input type="text" id="nicknameInput" placeholder="Введи свій нікнейм">
-        <button onclick="saveNick()">OK</button>
+        <input type="text" id="nicknameInput" placeholder="Введи свій нікнейм" data-i18n-placeholder="community.nickPlaceholder">
+        <button onclick="saveNick()" data-i18n="community.ok">OK</button>
     </div>
 
     <!-- CHAT WINDOW -->
@@ -27,20 +36,20 @@
 
         <!-- Коментарі -->
         <div class="chat-box">
-            <div class="chat-title">Обговорення</div>
+            <div class="chat-title" data-i18n="community.discussion">Обговорення</div>
             <div id="comments" class="chat-content"></div>
             <div class="chat-input">
-                <input type="text" id="commentInput" placeholder="Написати коментар...">
+                <input type="text" id="commentInput" placeholder="Написати коментар..." data-i18n-placeholder="community.commentPlaceholder">
                 <button onclick="sendComment()">▶</button>
             </div>
         </div>
 
         <!-- Чат -->
         <div class="chat-box">
-            <div class="chat-title">Чат</div>
+            <div class="chat-title" data-i18n="community.chat">Чат</div>
             <div id="chat" class="chat-content"></div>
             <div class="chat-input">
-                <input type="text" id="chatInput" placeholder="Напиши повідомлення...">
+                <input type="text" id="chatInput" placeholder="Напиши повідомлення..." data-i18n-placeholder="community.chatPlaceholder">
                 <button onclick="sendMessage()">▶</button>
             </div>
         </div>
@@ -48,6 +57,7 @@
     </div>
 </div>
 
+<script src="./js/i18n.js"></script>
 <script src="./js/community_script.js"></script>
 </body>
 </html>

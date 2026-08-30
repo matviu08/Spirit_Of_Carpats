@@ -5,7 +5,8 @@ function saveNick() {
     if (input.value.trim() !== "") {
         nickname = input.value.trim();
         input.value = "";
-        alert("Нікнейм встановлено: " + nickname);
+        const prefix = (window.i18n && window.i18n.t) ? window.i18n.t('community.nickSaved') : "Нікнейм встановлено: ";
+        alert(prefix + nickname);
     }
 }
 

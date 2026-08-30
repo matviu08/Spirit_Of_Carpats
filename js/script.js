@@ -1,5 +1,83 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ====== СВІТЛОВИЙ КУРСОР ======
+    const cursorGlow = document.getElementById('cursor-glow');
+    if (cursorGlow && !reduceMotion) {
+        let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+        let cx = mx, cy = my;
+        window.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
+        function animateGlow() {
+            cx += (mx - cx) * 0.12;
+            cy += (my - cy) * 0.12;
+            cursorGlow.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+            requestAnimationFrame(animateGlow);
+        }
+        animateGlow();
+    }
+
+    // ====== ПОЯВА ЕЛЕМЕНТІВ ПРИ СКРОЛІ ======
+    const revealTargets = document.querySelectorAll(
+        '.section, .card, .gallery-item, .post, .team-card, .mechanic-card, .story-card'
+    );
+
+    if (revealTargets.length) {
+        revealTargets.forEach((el, i) => {
+            el.classList.add('reveal');
+            el.style.setProperty('--i', i % 8);
+        });
+
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+            revealTargets.forEach(el => el.classList.add('visible'));
+        } else {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+            revealTargets.forEach(el => io.observe(el));
+        }
+    }
+
+    // ====== АКТИВНИЙ ПУНКТ МЕНЮ ПРИ СКРОЛІ ======
+    const navAnchors = document.querySelectorAll('#nav-links a[href^="#"]');
+    const navSections = Array.from(navAnchors)
+        .map(a => document.querySelector(a.getAttribute('href')))
+        .filter(Boolean);
+
+    if (navAnchors.length && navSections.length && 'IntersectionObserver' in window) {
+        const spy = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = '#' + entry.target.id;
+                    navAnchors.forEach(a => {
+                        a.classList.toggle('nav-active', a.getAttribute('href') === id);
+                    });
+                }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        navSections.forEach(sec => spy.observe(sec));
+    }
+
+    // ====== ЛЕГКИЙ ПАРАЛАКС КАРТОК ПІД КУРСОРОМ ======
+    if (!reduceMotion) {
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mx', x + '%');
+                card.style.setProperty('--my', y + '%');
+            });
+        });
+    }
+
     // ====== МАГІЧНІ СВІТЛЯЧКИ ТА ЛИСТЯ ======
     const particlesContainer = document.getElementById('particles');
     const leavesContainer = document.getElementById('leaves');
@@ -164,16 +242,17 @@ document.addEventListener('DOMContentLoaded', () => {
         audioTrack.volume = 0.7; 
 
         playBtn.addEventListener('click', () => {
+            const t = (window.i18n && window.i18n.t) ? window.i18n.t : (k) => k;
             if (audioTrack.paused) {
                 audioTrack.play();
-                playBtn.innerHTML = '⏸ PAUSE';
+                playBtn.innerHTML = t('gallery.pause');
                 retroPlayer.classList.add('is-playing');
-                trackStatus.textContent = 'Відтворюється...';
+                trackStatus.textContent = t('gallery.playing');
             } else {
                 audioTrack.pause();
-                playBtn.innerHTML = '▶ PLAY';
+                playBtn.innerHTML = t('gallery.play');
                 retroPlayer.classList.remove('is-playing');
-                trackStatus.textContent = 'Зупинено';
+                trackStatus.textContent = t('gallery.stopped');
             }
         });
     }

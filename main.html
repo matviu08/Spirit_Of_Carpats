@@ -4,28 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spirits Of The Carpathians - Девлог</title>
+    <title data-i18n="page.mainTitle">Spirits Of The Carpathians - Девлог</title>
+    <meta name="description" content="Девлог розробки Spirits Of The Carpathians: механіки, галерея, дорожня карта та перехід проєкту на Unity Engine.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305040f'/%3E%3Cpath d='M16 4 L26 26 L6 26 Z' fill='none' stroke='%23c49a3c' stroke-width='2'/%3E%3Ccircle cx='16' cy='18' r='2.5' fill='%23e8c35a'/%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
+    <div id="cursor-glow"></div>
     <div id="particles"></div>
     <div id="leaves"></div>
 
     <header>
         <div class="container header-content">
             <div class="logo">Spirits Of The Carpathians</div>
-            <div class="menu-toggle" id="mobile-menu">☰</div>
-            <nav id="nav-links">
-                <a href="#about">Історія</a>
-                <a href="#mechanics">Механіки</a>
-                <a href="#gallery">Галерея</a>
-                <a href="#roadmap">План</a> <a href="#updates">Девлог</a>
-                <a href="#team">Команда</a>
-                <a href="comunity_menu.html">Спільнота</a>
-            </nav>
+            <div class="nav-wrapper">
+                <nav id="nav-links">
+                    <a href="#about" data-i18n="nav.about">Історія</a>
+                    <a href="#mechanics" data-i18n="nav.mechanics">Механіки</a>
+                    <a href="#gallery" data-i18n="nav.gallery">Галерея</a>
+                    <a href="#roadmap" data-i18n="nav.roadmap">План</a> <a href="#updates" data-i18n="nav.updates">Девлог</a>
+                    <a href="#team" data-i18n="nav.team">Команда</a>
+                    <a href="comunity_menu.html" data-i18n="nav.community">Спільнота</a>
+                </nav>
+                <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">EN</button>
+                <div class="menu-toggle" id="mobile-menu">☰</div>
+            </div>
         </div>
     </header>
 
@@ -33,15 +39,16 @@
         <section id="about" class="section">
             <div class="container section-content">
                 <div class="text-block">
-                    <h2>Глава 1: Поклик Карпат</h2>
+                    <span class="engine-badge"><span class="engine-mark">▲</span><span data-i18n="about.badge">Проєкт переноситься на Unity Engine</span></span>
+                    <h2 data-i18n="about.title">Глава 1: Поклик Карпат</h2>
                     <div class="card story-card">
-                        <p>Головний герой — колишній лісничий, який повертається до рідних лісів Карпат заради
+                        <p data-i18n="about.p1">Головний герой — колишній лісничий, який повертається до рідних лісів Карпат заради
                             ностальгії. Знайомі стежки та залишені колись позначки для туристів викликають теплі
                             спогади.</p>
-                        <p>Вирушивши до своєї старої наглядової вишки, герой бере до рук сокиру і раптом ловить
+                        <p data-i18n="about.p2">Вирушивши до своєї старої наглядової вишки, герой бере до рук сокиру і раптом ловить
                             моторошний флешбек із невідомим голосом. Проігнорувавши попередження, він зрубує хворе
                             дерево... і пробуджує щось паранормальне.</p>
-                        <p>Звідкись прилітає газета з майбутнього. Раптовий удар. Темрява. Так закінчується перша глава.
+                        <p data-i18n="about.p3">Звідкись прилітає газета з майбутнього. Раптовий удар. Темрява. Так закінчується перша глава.
                         </p>
                     </div>
                 </div>
@@ -53,27 +60,27 @@
 
         <section id="mechanics" class="section dark-section">
             <div class="container">
-                <h2>Арсенал механік</h2>
+                <h2 data-i18n="mechanics.title">Арсенал механік</h2>
                 <div class="mechanics-grid">
 
                     <div class="card mechanic-card">
                         <div class="icon">🏃</div>
-                        <h3>Вдосконалений рух</h3>
-                        <p>Повністю кастомна система переміщення гравця (BetterPlayerMovement). Плавні стрибки, чітке
+                        <h3 data-i18n="mechanics.m1.title">Вдосконалений рух</h3>
+                        <p data-i18n="mechanics.m1.text">Повністю кастомна система переміщення гравця (BetterPlayerMovement). Плавні стрибки, чітке
                             керування та нові анімації для максимального контролю в платформінгу.</p>
                     </div>
 
                     <div class="card mechanic-card">
                         <div class="icon">🌍</div>
-                        <h3>Система локацій</h3>
-                        <p>Безшовне перемикання між рівнями завдяки власному LocationService. Кожна зона має свої
+                        <h3 data-i18n="mechanics.m2.title">Система локацій</h3>
+                        <p data-i18n="mechanics.m2.text">Безшовне перемикання між рівнями завдяки власному LocationService. Кожна зона має свої
                             моделі, унікальну музику та багатошаровий дизайн (Added3Layer).</p>
                     </div>
 
                     <div class="card mechanic-card">
                         <div class="icon">💾</div>
-                        <h3>Збереження прогресу</h3>
-                        <p>Надійна система SaveService, яка фіксує всі досягнення. Гравці можуть налаштовувати гру під
+                        <h3 data-i18n="mechanics.m3.title">Збереження прогресу</h3>
+                        <p data-i18n="mechanics.m3.text">Надійна система SaveService, яка фіксує всі досягнення. Гравці можуть налаштовувати гру під
                             себе у детальному меню опцій, і всі дані будуть збережені.</p>
                     </div>
 
@@ -83,42 +90,42 @@
 
         <section id="gallery" class="section">
             <div class="container">
-                <h2>Галерея спрайтів та фонів</h2>
+                <h2 data-i18n="gallery.title">Галерея спрайтів та фонів</h2>
                 <div class="gallery-grid">
 
                     <div class="gallery-item">
                         <img src="assets/standing.png" alt="Спрайт" class="gallery-img">
-                        <span class="sprite-name">Лісничий (Idle)</span>
+                        <span class="sprite-name" data-i18n="gallery.item1">Лісничий (Idle)</span>
                     </div>
 
                     <div class="gallery-item">
                         <img src="assets/newspaper.png" alt="Спрайт" class="gallery-img">
-                        <span class="sprite-name">Газета з майбутнього</span>
+                        <span class="sprite-name" data-i18n="gallery.item2">Газета з майбутнього</span>
                     </div>
 
                     <div class="gallery-item" id="secret-tree">
                         <img src="assets/sickTree.png" alt="Спрайт" class="gallery-img">
-                        <span class="sprite-name">Хворе дерево</span>
+                        <span class="sprite-name" data-i18n="gallery.item3">Хворе дерево</span>
                     </div>
 
                     <div class="gallery-item">
                         <img src="assets/location.png" alt="Спрайт" class="gallery-img">
-                        <span class="sprite-name">Карпатський ліс</span>
+                        <span class="sprite-name" data-i18n="gallery.item4">Карпатський ліс</span>
                     </div>
 
                     <div class="gallery-item">
                         <img src="assets/meinMenuBac.png" alt="Спрайт" class="gallery-img">
-                        <span class="sprite-name">Фон головного меню</span>
+                        <span class="sprite-name" data-i18n="gallery.item5">Фон головного меню</span>
                     </div>
 
                     <div class="gallery-item">
                         <img src="assets/optionBac.png" alt="Спрайт" class="gallery-img">
-                        <span class="sprite-name">Фон налаштувань</span>
+                        <span class="sprite-name" data-i18n="gallery.item6">Фон налаштувань</span>
                     </div>
 
                 </div>
                 <div class="audio-section">
-                    <h3 class="sub-heading">Аудіоархів: Звуки лісу</h3>
+                    <h3 class="sub-heading" data-i18n="gallery.audioTitle">Аудіоархів: Звуки лісу</h3>
 
                     <div class="retro-player" id="retro-player">
                         <div class="cassette-window">
@@ -128,89 +135,105 @@
                         </div>
 
                         <div class="player-info">
-                            <span class="track-name">meinMusic.mp3</span>
-                            <span class="track-status" id="track-status">Зупинено</span>
+                            <span class="track-name">Enchanted Woodland</span>
+                            <span class="track-status" id="track-status" data-i18n="gallery.stopped">Зупинено</span>
                         </div>
 
                         <div class="player-controls">
-                            <button id="play-btn" class="btn play-btn">▶ PLAY</button>
+                            <button id="play-btn" class="btn play-btn" data-i18n="gallery.play">▶ PLAY</button>
                         </div>
 
                         <audio id="bgm-audio" loop>
-                            <source src="assets/meinMusicCapter1.mp3" type="audio/mpeg">
+                            <source src="assets/Enchanted Woodland.mp3" type="audio/mpeg">
                         </audio>
                     </div>
+                    
                 </div>
             </div>
         </section>
 
         <section id="roadmap" class="section dark-section">
             <div class="container">
-                <h2>Дорожня карта розробки</h2>
+                <h2 data-i18n="roadmap.title">Дорожня карта розробки</h2>
                 <div class="roadmap-content">
 
                     <div class="card">
-                        <h3 class="roadmap-title">Етапи проєкту</h3>
+                        <h3 class="roadmap-title" data-i18n="roadmap.stagesTitle">Етапи проєкту</h3>
                         <ul class="timeline-list">
                             <li class="done">
                                 <span class="status-dot"></span>
                                 <div class="phase-info">
-                                    <h4>Прототип</h4>
-                                    <p>Базовий рух, тестова локація, збереження гри.</p>
+                                    <h4 data-i18n="roadmap.s1.title">Прототип</h4>
+                                    <p data-i18n="roadmap.s1.text">Базовий рух, тестова локація, збереження гри.</p>
                                 </div>
                             </li>
                             <li class="active">
                                 <span class="status-dot"></span>
                                 <div class="phase-info">
-                                    <h4>Альфа-версія</h4>
-                                    <p>Головне меню, базова фізика, створення першої глави та налаштування звуків.</p>
+                                    <h4 data-i18n="roadmap.s2.title">Альфа-версія</h4>
+                                    <p data-i18n="roadmap.s2.text">Головне меню, базова фізика, створення першої глави та налаштування звуків.</p>
+                                </div>
+                            </li>
+                            <li class="unity">
+                                <span class="status-dot"></span>
+                                <div class="phase-info">
+                                    <h4 data-i18n="roadmap.s3.title">Портування на Unity</h4>
+                                    <p data-i18n="roadmap.s3.text">Перенесення проєкту на Unity Engine: фізика, спрайти, освітлення та системи збережень.</p>
+                                    <span class="mini-tag" data-i18n="roadmap.s3.tag">В процесі</span>
                                 </div>
                             </li>
                             <li class="planned">
                                 <span class="status-dot"></span>
                                 <div class="phase-info">
-                                    <h4>Бета-тестування</h4>
-                                    <p>Полірування багів, оптимізація та підготовка до релізу.</p>
+                                    <h4 data-i18n="roadmap.s4.title">Бета-тестування</h4>
+                                    <p data-i18n="roadmap.s4.text">Полірування багів, оптимізація та підготовка до релізу.</p>
                                 </div>
                             </li>
                             <li class="planned">
                                 <span class="status-dot"></span>
                                 <div class="phase-info">
-                                    <h4>Реліз</h4>
-                                    <p>Публікація Spirits Of The Carpathians для гравців.</p>
+                                    <h4 data-i18n="roadmap.s5.title">Реліз</h4>
+                                    <p data-i18n="roadmap.s5.text">Публікація Spirits Of The Carpathians для гравців.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
 
                     <div class="card">
-                        <h3 class="roadmap-title">Загальний прогрес</h3>
+                        <h3 class="roadmap-title" data-i18n="roadmap.progressTitle">Загальний прогрес</h3>
 
                         <div class="progress-item">
-                            <div class="progress-labels"><span>Механіки та Код</span> <span>35%</span></div>
+                            <div class="progress-labels"><span data-i18n="roadmap.p1">Механіки та Код</span> <span>35%</span></div>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 35%;"></div>
                             </div>
                         </div>
 
                         <div class="progress-item">
-                            <div class="progress-labels"><span>Графіка та Спрайти</span> <span>50%</span></div>
+                            <div class="progress-labels"><span data-i18n="roadmap.p2">Графіка та Спрайти</span> <span>50%</span></div>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 50%;"></div>
                             </div>
                         </div>
 
                         <div class="progress-item">
-                            <div class="progress-labels"><span>Звук та Музика</span> <span>40%</span></div>
+                            <div class="progress-labels"><span data-i18n="roadmap.p3">Звук та Музика</span> <span>40%</span></div>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 40%;"></div>
                             </div>
                         </div>
 
                         <div class="progress-item">
-                            <div class="progress-labels"><span>Лор та Сюжет</span> <span>30%</span></div>
+                            <div class="progress-labels"><span data-i18n="roadmap.p4">Лор та Сюжет</span> <span>30%</span></div>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 30%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress-item">
+                            <div class="progress-labels"><span data-i18n="roadmap.p5">Портування на Unity</span> <span>15%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 15%;"></div>
                             </div>
                         </div>
                     </div>
@@ -221,15 +244,35 @@
 
         <section id="updates" class="section">
             <div class="container">
-                <h2>Хроніки розробки (Девлог)</h2>
+                <h2 data-i18n="updates.title">Хроніки розробки (Девлог)</h2>
                 <div class="updates-timeline">
 
                     <article class="post">
                         <div class="post-header">
-                            <h3>Фізика(БЕТА)</h3>
-                            <span class="tag">Оновлення фізики 13/04/2026</span>
+                            <h3 data-i18n="devlog.unity.title">Перехід на Unity Engine</h3>
+                            <span class="tag" data-i18n="devlog.unity.tag">Рушій 30/08/2026</span>
                         </div>
-                        <p>Проведено масштабне оновлення фізичного рушія гри розробником (<strong>BobrickCS22</strong>).
+                        <div class="post-body">
+                            <img src="assets/Change_.png" alt="Unity Engine" class="post-image">
+                            <p data-i18n="devlog.unity.p1">Прийнято рішення перенести проєкт на <strong>Unity Engine</strong>. Це дасть нам стабільнішу
+                                фізику, готову систему 2D-освітлення, зручніші інструменти для роботи зі спрайтами та
+                                анімаціями, а також спростить подальшу кросплатформенну збірку гри.</p>
+                            <h4 class="post-subheading" data-i18n="devlog.unity.q">Чому відбувся перехід?</h4>
+                            <p data-i18n="devlog.unity.p2">Ми зіткнулись з нестабільністю консольної розробки і проблемою з
+                                працюванням над асетами, графікою і всім іншим, що має бути в звичайній грі. Також дане
+                                рішення допомагає нам покращити якість самої гри.</p>
+                            <p data-i18n="devlog.unity.p3">Наразі команда переносить існуючі напрацювання — рух персонажа, локації та систему
+                                збережень — у нове середовище. Частина візуальних ефектів (світло, частинки, атмосфера
+                                лісу) вже виглядає краще, ніж на попередньому рушії.</p>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <div class="post-header">
+                            <h3 data-i18n="devlog.p1.title">Фізика(БЕТА)</h3>
+                            <span class="tag" data-i18n="devlog.p1.tag">Оновлення фізики 13/04/2026</span>
+                        </div>
+                        <p data-i18n="devlog.p1.text">Проведено масштабне оновлення фізичного рушія гри розробником (<strong>BobrickCS22</strong>).
                             У рамках цього етапу було закладено основу для нової системи освітлення: реалізовано перші
                             механіки взаємодії світла з об’єктами, додано базову модель його поширення та затухання, що
                             вже дозволяє створювати більш глибоку й атмосферну візуальну складову.
@@ -243,10 +286,10 @@
 
                     <article class="post">
                         <div class="post-header">
-                            <h3>Генерація локації, атмосфера</h3>
-                            <span class="tag">Оновлення локіції 23/03/2026</span>
+                            <h3 data-i18n="devlog.p2.title">Генерація локації, атмосфера</h3>
+                            <span class="tag" data-i18n="devlog.p2.tag">Оновлення локіції 23/03/2026</span>
                         </div>
-                        <p>Була виконна робота над генерацією локацій та створенням атмосфери.Мною
+                        <p data-i18n="devlog.p2.text">Була виконна робота над генерацією локацій та створенням атмосфери.Мною
                             (<strong>BobrickCS22</strong>) було зроблено перше оновлення атмосфери локації, тепер світ
                             став ширший. В данний момент виконуються роботи над колізією.</p>
                     </article>
@@ -254,10 +297,10 @@
 
                     <article class="post">
                         <div class="post-header">
-                            <h3>Фізика, Рух та Анімації</h3>
-                            <span class="tag">Оновлення Beta</span>
+                            <h3 data-i18n="devlog.p3.title">Фізика, Рух та Анімації</h3>
+                            <span class="tag" data-i18n="devlog.p3.tag">Оновлення Beta</span>
                         </div>
-                        <p>Останні кілька днів ми активно працювали над ядром гри. <strong>BobrickCS22</strong> викотив
+                        <p data-i18n="devlog.p3.text">Останні кілька днів ми активно працювали над ядром гри. <strong>BobrickCS22</strong> викотив
                             нову бету фізики (Physics_Beta!), що зробило світ більш живим (додано генерацію хмар). Тим
                             часом <strong>forking2</strong> переписав систему керування на BetterPlayerMovement. Я
                             (Матвій) підв'язав під це нові спрайти та анімації. Тепер персонаж відчувається дуже
@@ -266,10 +309,10 @@
 
                     <article class="post">
                         <div class="post-header">
-                            <h3>Система локацій та збережень</h3>
-                            <span class="tag">Архітектура</span>
+                            <h3 data-i18n="devlog.p4.title">Система локацій та збережень</h3>
+                            <span class="tag" data-i18n="devlog.p4.tag">Архітектура</span>
                         </div>
-                        <p>Велика робота "під капотом". Ми реалізували повноцінне перемикання між локаціями.
+                        <p data-i18n="devlog.p4.text">Велика робота "під капотом". Ми реалізували повноцінне перемикання між локаціями.
                             <strong>BobrickCS22</strong> оновив моделі та LocationService, а <strong>forking2</strong>
                             закінчив роботу над SaveService, щоб прогрес між цими локаціями не втрачався. Також додали
                             підтримку трьох шарів для рівнів (Added3Layer) для створення ефекту глибини.</p>
@@ -277,10 +320,10 @@
 
                     <article class="post">
                         <div class="post-header">
-                            <h3>Головне меню, опції та звук</h3>
-                            <span class="tag">UI / UX</span>
+                            <h3 data-i18n="devlog.p5.title">Головне меню, опції та звук</h3>
+                            <span class="tag" data-i18n="devlog.p5.tag">UI / UX</span>
                         </div>
-                        <p>Гра нарешті отримує своє "обличчя". Я частково завершив логіку головного меню та створив
+                        <p data-i18n="devlog.p5.text">Гра нарешті отримує своє "обличчя". Я частково завершив логіку головного меню та створив
                             повноцінне вікно налаштувань, де тепер можна перемикати опції. Додав фонову музику та нові
                             зображення, а <strong>BobrickCS22</strong> озвучив інтерфейс (створено hover_sound.wav для
                             кнопок). Проєкт зібрано до купи, баги пофікшено!</p>
@@ -293,7 +336,7 @@
 
     <section id="team" class="section">
         <div class="container">
-            <h2>Команда розробників</h2>
+            <h2 data-i18n="team.title">Команда розробників</h2>
             <div class="team-grid">
 
                 <div class="card team-card">
@@ -301,10 +344,10 @@
                         <img src="assets/matviu08.jpg" alt="Аватар Матвія" class="responsive-image avatar-img">
                     </div>
                     <h3>Матвій (matviu08)</h3>
-                    <span class="team-role">Full-stack розробник</span>
-                    <p>Як і вся команда, займався всім потроху: від написання коду та базової логіки до малювання
+                    <span class="team-role" data-i18n="team.role">Full-stack розробник</span>
+                    <p data-i18n="team.m1.text">Як і вся команда, займався всім потроху: від написання коду та базової логіки до малювання
                         піксель-арту, створення анімацій та UI.</p>
-                    <a href="https://github.com/matviu08" target="_blank" class="btn member-github-btn">Профіль
+                    <a href="https://github.com/matviu08" target="_blank" class="btn member-github-btn" data-i18n="team.githubBtn">Профіль
                         GitHub</a>
                 </div>
 
@@ -313,10 +356,10 @@
                         <img src="assets/BobrickCS22.jpg" alt="Аватар BobrickCS22" class="responsive-image avatar-img">
                     </div>
                     <h3>BobrickCS22</h3>
-                    <span class="team-role">Full-stack розробник</span>
-                    <p>Універсальний боєць. Разом з іншими працював над загальною архітектурою, налаштуванням фізики,
+                    <span class="team-role" data-i18n="team.role">Full-stack розробник</span>
+                    <p data-i18n="team.m2.text">Універсальний боєць. Разом з іншими працював над загальною архітектурою, налаштуванням фізики,
                         левел-дизайном та атмосферними звуками.</p>
-                    <a href="https://github.com/BobrickCS22" target="_blank" class="btn member-github-btn">Профіль
+                    <a href="https://github.com/TsapenkoDenys" target="_blank" class="btn member-github-btn" data-i18n="team.githubBtn">Профіль
                         GitHub</a>
                 </div>
 
@@ -325,10 +368,10 @@
                         <img src="assets/forking2.jpg" alt="Аватар forking2" class="responsive-image avatar-img">
                     </div>
                     <h3>forking2</h3>
-                    <span class="team-role">Full-stack розробник</span>
-                    <p>Також доклав руку до всіх аспектів проєкту. Активно працював над рухом гравця, системами
+                    <span class="team-role" data-i18n="team.role">Full-stack розробник</span>
+                    <p data-i18n="team.m3.text">Також доклав руку до всіх аспектів проєкту. Активно працював над рухом гравця, системами
                         збереження та спільним поліруванням гри.</p>
-                    <a href="https://github.com/forking2" target="_blank" class="btn member-github-btn">Профіль
+                    <a href="https://github.com/forking2" target="_blank" class="btn member-github-btn" data-i18n="team.githubBtn">Профіль
                         GitHub</a>
                 </div>
 
@@ -339,7 +382,8 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 matviu08, BobrickCS22, forking2. Всі права захищено.</p>
+            <p data-i18n="footer.rights">© 2026 matviu08, BobrickCS22, forking2. Всі права захищено.</p>
+            <p class="footer-stack" data-i18n="footer.stack">Розробляється на <span>Unity Engine</span> · HTML5 · CSS3 · JavaScript</p>
         </div>
     </footer>
 
@@ -352,8 +396,9 @@
         </div>
     </div>
     <div id="paranormal-overlay">
-        <h1 class="creepy-text">ЛІС ПАМ'ЯТАЄ...</h1>
+        <h1 class="creepy-text" data-i18n="easterEgg.text">ЛІС ПАМ'ЯТАЄ...</h1>
     </div>
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 
