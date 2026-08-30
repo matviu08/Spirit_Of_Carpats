@@ -127,27 +127,50 @@
                 <div class="audio-section">
                     <h3 class="sub-heading" data-i18n="gallery.audioTitle">Аудіоархів: Звуки лісу</h3>
 
-                    <div class="retro-player" id="retro-player">
-                        <div class="cassette-window">
-                            <div class="reel"></div>
-                            <div class="tape-bridge"></div>
-                            <div class="reel"></div>
+                    <div class="players-row">
+                        <div class="retro-player" data-player>
+                            <div class="cassette-window">
+                                <div class="reel"></div>
+                                <div class="tape-bridge"></div>
+                                <div class="reel"></div>
+                            </div>
+
+                            <div class="player-info">
+                                <span class="track-name">Enchanted Woodland</span>
+                                <span class="track-status" data-track-status data-i18n="gallery.stopped">Зупинено</span>
+                            </div>
+
+                            <div class="player-controls">
+                                <button class="btn play-btn" data-play-btn data-i18n="gallery.play">▶ PLAY</button>
+                            </div>
+
+                            <audio data-bgm-audio loop>
+                                <source src="assets/enchanted-woodland.mp3" type="audio/mpeg">
+                            </audio>
                         </div>
 
-                        <div class="player-info">
-                            <span class="track-name">Enchanted Woodland</span>
-                            <span class="track-status" id="track-status" data-i18n="gallery.stopped">Зупинено</span>
-                        </div>
+                        <div class="retro-player" data-player>
+                            <div class="cassette-window">
+                                <div class="reel"></div>
+                                <div class="tape-bridge"></div>
+                                <div class="reel"></div>
+                            </div>
 
-                        <div class="player-controls">
-                            <button id="play-btn" class="btn play-btn" data-i18n="gallery.play">▶ PLAY</button>
-                        </div>
+                            <div class="player-info">
+                                <span class="track-name">Chapter 1 Theme</span>
+                                <span class="track-status" data-track-status data-i18n="gallery.stopped">Зупинено</span>
+                            </div>
 
-                        <audio id="bgm-audio" loop>
-                            <source src="assets/Enchanted Woodland.mp3" type="audio/mpeg">
-                        </audio>
+                            <div class="player-controls">
+                                <button class="btn play-btn" data-play-btn data-i18n="gallery.play">▶ PLAY</button>
+                            </div>
+
+                            <audio data-bgm-audio loop>
+                                <source src="assets/meinMusicCapter1.mp3" type="audio/mpeg">
+                            </audio>
+                        </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -353,7 +376,7 @@
 
                 <div class="card team-card">
                     <div class="avatar-placeholder text-avatar">
-                        <img src="assets/BobrickCS22.jpg" alt="Аватар BobrickCS22" class="responsive-image avatar-img">
+                        <img src="assets/bobrickcs22.jpg" alt="Аватар BobrickCS22" class="responsive-image avatar-img">
                     </div>
                     <h3>BobrickCS22</h3>
                     <span class="team-role" data-i18n="team.role">Full-stack розробник</span>

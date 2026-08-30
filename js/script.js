@@ -231,29 +231,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ====== РЕТРО АУДІОПЛЕЄР ======
-    const playBtn = document.getElementById('play-btn');
-    const audioTrack = document.getElementById('bgm-audio');
-    const retroPlayer = document.getElementById('retro-player');
-    const trackStatus = document.getElementById('track-status');
+// ====== РЕТРО АУДІОПЛЕЄРИ (підтримка кількох плеєрів одночасно) ======
+    const retroPlayers = document.querySelectorAll('[data-player]');
 
-    if (playBtn && audioTrack) {
-        // Зменшуємо гучність, щоб не налякати (30%)
-        audioTrack.volume = 0.7; 
+    retroPlayers.forEach((retroPlayer) => {
+        const playBtn = retroPlayer.querySelector('[data-play-btn]');
+        const audioTrack = retroPlayer.querySelector('[data-bgm-audio]');
+        const trackStatus = retroPlayer.querySelector('[data-track-status]');
+
+        if (!playBtn || !audioTrack) return;
+
+        // Зменшуємо гучність, щоб не налякати (70%)
+        audioTrack.volume = 0.7;
 
         playBtn.addEventListener('click', () => {
             const t = (window.i18n && window.i18n.t) ? window.i18n.t : (k) => k;
+
+            // Зупиняємо всі інші треки, щоб вони не грали одночасно
+            retroPlayers.forEach((other) => {
+                if (other === retroPlayer) return;
+                const otherAudio = other.querySelector('[data-bgm-audio]');
+                const otherBtn = other.querySelector('[data-play-btn]');
+                const otherStatus = other.querySelector('[data-track-status]');
+                if (otherAudio && !otherAudio.paused) {
+                    otherAudio.pause();
+                    other.classList.remove('is-playing');
+                    if (otherBtn) otherBtn.innerHTML = t('gallery.play');
+                    if (otherStatus) otherStatus.textContent = t('gallery.stopped');
+                }
+            });
+
             if (audioTrack.paused) {
                 audioTrack.play();
                 playBtn.innerHTML = t('gallery.pause');
                 retroPlayer.classList.add('is-playing');
-                trackStatus.textContent = t('gallery.playing');
+                if (trackStatus) trackStatus.textContent = t('gallery.playing');
             } else {
                 audioTrack.pause();
                 playBtn.innerHTML = t('gallery.play');
                 retroPlayer.classList.remove('is-playing');
-                trackStatus.textContent = t('gallery.stopped');
+                if (trackStatus) trackStatus.textContent = t('gallery.stopped');
             }
         });
-    }
+    });
 
